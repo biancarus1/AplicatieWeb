@@ -1,0 +1,45 @@
+﻿@page
+@model AplicatieWeb.Pages.Hairstylists.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Hairstylist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Hairstylist.ID" />
+            <div class="form-group">
+                <label asp-for="Hairstylist.NumeHairstylist" class="control-label"></label>
+                <input asp-for="Hairstylist.NumeHairstylist" class="form-control" />
+                <span asp-validation-for="Hairstylist.NumeHairstylist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hairstylist.PrenumeHairstylist" class="control-label"></label>
+                <input asp-for="Hairstylist.PrenumeHairstylist" class="form-control" />
+                <span asp-validation-for="Hairstylist.PrenumeHairstylist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hairstylist.Experienta" class="control-label"></label>
+                <input asp-for="Hairstylist.Experienta" class="form-control" />
+                <span asp-validation-for="Hairstylist.Experienta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

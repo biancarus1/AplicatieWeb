@@ -1,0 +1,48 @@
+﻿@page
+@model AplicatieWeb.Pages.Appointments.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Appointment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Appointment.Nume" class="control-label"></label>
+                <input asp-for="Appointment.Nume" class="form-control" />
+                <span asp-validation-for="Appointment.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Prenume" class="control-label"></label>
+                <input asp-for="Appointment.Prenume" class="form-control" />
+                <span asp-validation-for="Appointment.Prenume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Appointment.Telefon" class="control-label"></label>
+                <input asp-for="Appointment.Telefon" class="form-control" />
+                <span asp-validation-for="Appointment.Telefon" class="text-danger"></span>
+            </div>
+            <label asp-for="Appointment.HairstylistID" class="control-label">Id Hairstylist</label>
+            <select asp-for="Appointment.HairstylistID" class="form-control" asp-items="ViewBag.HairstylistID">
+            </select>
+            <span asp-validation-for="Appointment.HairstylistID" class="text-danger"></span>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
